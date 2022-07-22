@@ -1,0 +1,15 @@
+input{
+    min-width: 200px;
+    padding: 22px;
+   background-color: transparent;
+   border: none;
+   border-bottom: 2px solid rgb(164, 31, 236);
+    outline: none;
+    color: #eee;
+}
+
+input:focus{
+background-color: rgba(164, 31, 236, 0.2);
+border-radius: 6px;
+
+}

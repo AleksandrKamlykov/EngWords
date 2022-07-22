@@ -1,0 +1,74 @@
+.btn {
+    // margin-top: 20px;
+    border-radius: 6px;
+
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: rgb(174, 23, 245);
+        color: #fff;
+    }
+}
+
+//? Sizes
+
+.xs {
+    padding: 4px 6px;
+    font-size: 0.8rem;
+}
+
+.md {
+    padding: 6px 8px;
+    font-size: 1rem;
+}
+
+.lg {
+    padding: 8px 10px;
+    font-size: 1.2rem;
+}
+
+//? Colors
+
+.default {
+    border: 1px solid rgb(174, 23, 245);
+    color: rgb(174, 23, 245);
+    background-color: transparent;
+}
+
+.success {
+    border: 1px solid rgb(5, 195, 132);
+    background-color: rgb(5, 195, 132);
+    color: #fff;
+    &:hover {
+        border: 1px solid rgb(7, 159, 108);
+        background-color: rgb(7, 159, 108);
+    }
+}
+.warning {
+    border: 1px solid rgb(228, 200, 15);
+    background-color: rgb(228, 200, 15);
+    color: #fff;
+    &:hover {
+        border: 1px solid rgb(183, 160, 12);
+        background-color: rgb(183, 160, 12);
+    }
+}
+.error {
+    border: 1px solid rgb(203, 35, 32);
+    background-color: rgb(203, 35, 32);
+    color: #fff;
+    &:hover {
+        border: 1px solid rgb(160, 14, 12);
+        background-color: rgb(160, 14, 12);
+    }
+}
+.primary {
+    border: 1px solid rgb(174, 23, 245);
+    background-color: rgb(174, 23, 245);
+    color: #fff;
+    &:hover {
+        border: 1px solid rgb(124, 9, 178);
+        background-color: rgb(124, 9, 178);
+    }
+}
