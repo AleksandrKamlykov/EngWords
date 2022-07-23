@@ -1,25 +1,30 @@
-import { FC } from "react";
+import { FC, memo, useMemo } from "react";
 import classes from './button.module.scss';
 import { IButton } from "./interfaceButton";
 
 
 
-export const Button: FC<IButton> = ({ children, size, onClick, color }: IButton) => {
+export const Button: FC<IButton> = memo(({ children, size, onClick, color }: IButton) => {
 
-    const classArr = [classes.btn, classes.inher];
+    const classArr = useMemo(() => {
+        const cls = [classes.btn, classes.inher];
 
-    if (size) {
-        classArr.push(classes[size]);
-    } else {
-        classArr.push(classes.md);
+        if (size) {
+            cls.push(classes[size]);
+        } else {
+            cls.push(classes.md);
+        }
+
+        if (color) {
+            cls.push(classes[color]);
+        } else {
+            cls.push(classes.default);
+
+        }
+
+        return cls;
     }
-
-    if (color) {
-        classArr.push(classes[color]);
-    } else {
-        classArr.push(classes.default);
-
-    }
+        , []);
 
 
 
@@ -28,4 +33,4 @@ export const Button: FC<IButton> = ({ children, size, onClick, color }: IButton)
             {children}
         </button>
     );
-};
+});

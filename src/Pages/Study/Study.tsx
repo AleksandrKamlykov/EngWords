@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useEffect, useLayoutEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { dict } from '../../dic';
 import { FirstOrSecondStep, IWordInStep } from '../../components/Steps/firstOeSecond/FirstOrSecondStep';
 import './study.scss';
@@ -15,7 +15,6 @@ export enum isRightEnum {
 }
 
 export const Study: FC = () => {
-
 
 
     const [wordsForStudy, setWordsForStudy] = useState<IWordInStep[]>([]);

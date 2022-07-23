@@ -1,9 +1,12 @@
-import React, { FC } from "react";
+import React, { FC, useRef } from "react";
 import { InputFroWords } from "../../components/Shared/InputForWords/InputForWords";
 import { dict } from '../../dic';
+import { useCoords } from "../../hooks/useCoordinates";
 import classes from './main.module.scss';
 
 export const Main: FC = () => {
+
+
 
     return (<main className={classes.main}>
         <h1>Привіт!</h1>

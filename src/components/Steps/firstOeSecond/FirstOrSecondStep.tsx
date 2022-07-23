@@ -38,7 +38,7 @@ export const FirstOrSecondStep: FC<IFirstStep> = ({ wordLesson, variantHandler, 
                         return (
                             <li key={elem}>
 
-                                <input disabled={isRightAnswer !== isRightEnum.lose && variant !== elem} onClick={change} type="radio" id={elem} name="answer2" value={elem} />
+                                <input disabled={isRightAnswer !== isRightEnum.empty && variant !== elem} onClick={change} type="radio" id={elem} name="answer2" value={elem} />
                                 <label data-content={elem} htmlFor={elem}>{elem}</label>
                             </li>
 

@@ -1,0 +1,31 @@
+.wrapper {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    transition: 1s;
+    //width: 505px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    transform: translateX(530px);
+    padding: 10px;
+    border-radius: var(--block-radius);
+    background-color: rgb(49, 49, 49);
+    box-shadow: 2px 2px 2px 2px rgba(34, 34, 34, 0.504);
+}
+.show {
+    transition: 1s;
+    width: fit-content;
+    animation-name: showes;
+    animation-duration: 1s;
+    transform: translateX(1px) !important;
+}
+
+@keyframes showes {
+    0% {
+        transform: translateX(530px);
+    }
+    100% {
+        transform: translateX(1px);
+    }
+}
