@@ -1,0 +1,28 @@
+.wrapper {
+    border: 1px solid #222;
+    border-radius: var(--block-radius);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .letters {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    .resultText {
+        padding: 10px 20px;
+        background-color: #aaa;
+        border-radius: var(--block-radius);
+        min-width: 200px;
+        margin: 30px;
+        letter-spacing: 1px;
+        font-size: 1.1rem;
+        height: calc(1.1rem + 20px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

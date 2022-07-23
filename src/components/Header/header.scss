@@ -11,17 +11,17 @@ header {
     padding: 0 40px;
     align-items: center;
     .logo {
-        color: #eee;
+        color: var(--text-light-color);
         transition: var(--animations-time);
         cursor: pointer;
         text-decoration: none;
         outline: none;
         box-sizing: border-box;
         border: 1px solid transparent;
-        border-radius: 8px;
+        border-radius: var(--block-radius);
         h1 {
             line-height: 60px;
-            color: #eee;
+            color: var(--text-light-color);
             text-align: left;
             font-weight: 500;
             letter-spacing: 2px;
@@ -33,7 +33,7 @@ header {
     display: flex;
     height: 100%;
     .nav-item {
-        color: #eee;
+        color: var(--text-light-color);
         font-size: 1.1em;
         transition: var(--animations-time);
         cursor: pointer;

@@ -1,12 +1,12 @@
 .btn {
     // margin-top: 20px;
-    border-radius: 6px;
+    border-radius: var(--input-radius);
 
     cursor: pointer;
     transition: 0.3s;
 
     &:hover {
-        background-color: rgb(174, 23, 245);
+        background-color: var(--primary-color);
         color: #fff;
     }
 }
@@ -31,14 +31,14 @@
 //? Colors
 
 .default {
-    border: 1px solid rgb(174, 23, 245);
-    color: rgb(174, 23, 245);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
     background-color: transparent;
 }
 
 .success {
-    border: 1px solid rgb(5, 195, 132);
-    background-color: rgb(5, 195, 132);
+    border: 1px solid var(--success-color);
+    background-color: var(--success-color);
     color: #fff;
     &:hover {
         border: 1px solid rgb(7, 159, 108);
@@ -46,8 +46,8 @@
     }
 }
 .warning {
-    border: 1px solid rgb(228, 200, 15);
-    background-color: rgb(228, 200, 15);
+    border: 1px solid var(--warning-color);
+    background-color: var(--warning-color);
     color: #fff;
     &:hover {
         border: 1px solid rgb(183, 160, 12);
@@ -55,8 +55,8 @@
     }
 }
 .error {
-    border: 1px solid rgb(203, 35, 32);
-    background-color: rgb(203, 35, 32);
+    border: 1px solid var(--error-color);
+    background-color: var(--error-color);
     color: #fff;
     &:hover {
         border: 1px solid rgb(160, 14, 12);
@@ -64,8 +64,8 @@
     }
 }
 .primary {
-    border: 1px solid rgb(174, 23, 245);
-    background-color: rgb(174, 23, 245);
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
     color: #fff;
     &:hover {
         border: 1px solid rgb(124, 9, 178);

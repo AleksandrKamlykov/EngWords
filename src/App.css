@@ -1,3 +1,14 @@
+:root{
+  --primary-color : rgb(174, 23, 245);
+  --success-color: rgb(5, 195, 132);
+  --warning-color:rgb(228, 200, 15);
+  --error-color: rgb(203, 35, 32);
+  --text-light-color: #eee;
+  --text-dark-color: #222;
+  --input-radius: 4px;
+  --block-radius: 6px;
+}
+
 .App {
   text-align: center;
   background-color: rgb(216, 216, 216);
