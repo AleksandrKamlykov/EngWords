@@ -5,8 +5,6 @@ import cancel from '../images/cancel.svg';
 import arrowBottom from '../images/arrow-bottom.svg';
 import { ISelect } from './selectInterface';
 
-
-
 export const Select: JSXElementConstructor<ISelect> = ({ value, onChange, placeholder }) => {
 
     const [openList, setOpenList] = useState<boolean>(false);
@@ -18,7 +16,7 @@ export const Select: JSXElementConstructor<ISelect> = ({ value, onChange, placeh
         setSearchInput('');
         onChange('');
     };
-    const clickHandler = (event: React.MouseEvent<HTMLLIElement>) => {
+    const clickHandler = (event: any) => {
         const value = event.target.getAttribute('data-value');
         onChange(value);
         setOpenList(false);
@@ -37,6 +35,12 @@ export const Select: JSXElementConstructor<ISelect> = ({ value, onChange, placeh
 
     }, []);
 
+    const filterValue = (data: any[]) => {
+        if (!searchInput) return data;
+
+        return data.filter((e: string | number) => e.toString().includes(searchInput));
+    };
+
     return (<div className={classes.wrapper}>
         <div>
             <Inputtext placeholder={placeholder ?? ''} value={searchInput} onChange={searchHandler} />
@@ -45,17 +49,17 @@ export const Select: JSXElementConstructor<ISelect> = ({ value, onChange, placeh
         </div>
         <ul style={{ display: !openList && searchInput.length === 0 ? 'none' : 'block' }} className={classes.list}>
             {
-                value?.
-                    filter((e: string | number) => e.toString().includes(searchInput)).
-                    map((elem: string | number) => (
-                        <li
-                            key={elem}
-                            data-value={elem}
-                            onClick={clickHandler}
-                        >
-                            {elem}
-                        </li>
-                    ))
+
+
+                filterValue(value).map((elem: string | number) => (
+                    <li
+                        key={elem}
+                        data-value={elem}
+                        onClick={clickHandler}
+                    >
+                        {elem}
+                    </li>
+                ))
             }
         </ul>
     </div>);

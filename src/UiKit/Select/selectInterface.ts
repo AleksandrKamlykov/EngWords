@@ -1,5 +1,5 @@
 export interface ISelect {
-    value: string[] | number[] | undefined;
+    value: any[];
     onChange: (data: string) => void;
     placeholder?: string;
 }
