@@ -1,0 +1,17 @@
+h1 {
+    margin: 30px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 50px;
+}
+.categoryList {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+    gap: 20px;
+}

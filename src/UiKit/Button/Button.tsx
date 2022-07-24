@@ -4,7 +4,7 @@ import { IButton } from "./interfaceButton";
 
 
 
-export const Button: FC<IButton> = memo(({ children, size, onClick, color }: IButton) => {
+export const Button: FC<IButton> = memo(({ children, size, onClick, color, fullWidth }: IButton) => {
 
     const classArr = useMemo(() => {
         const cls = [classes.btn, classes.inher];
@@ -29,7 +29,7 @@ export const Button: FC<IButton> = memo(({ children, size, onClick, color }: IBu
 
 
     return (
-        <button onClick={onClick} className={classArr.join(' ')}>
+        <button style={{ width: fullWidth ? '100%' : 'auto' }} onClick={onClick} className={classArr.join(' ')}>
             {children}
         </button>
     );

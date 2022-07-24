@@ -7,6 +7,7 @@ import { ThreeStep } from '../../components/Steps/three/ThreeStep';
 import { FourStep } from '../../components/Steps/four/Four';
 import { useKeyPress } from '../../hooks/useKeyPress';
 import ring from '../../audio/done2.mp3';
+import { Helmet } from 'react-helmet';
 
 export enum isRightEnum {
     right = 'right',
@@ -73,7 +74,10 @@ export const Study: FC = () => {
 
 
     return (
-        <div className='study-wrapper'>
+        <section className='study-wrapper'>
+
+            <Helmet><title>EngWords | На вивченні</title></Helmet>
+
             <div className='info'>
                 <span>
                     {wordsForStudy.length > 0 && <>
@@ -98,5 +102,5 @@ export const Study: FC = () => {
 
             }
             <Button color={btnColor} onClick={checkIsRight} >{buttonText}</Button>
-        </div>);
+        </section>);
 };

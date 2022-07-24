@@ -19,12 +19,13 @@ header {
         box-sizing: border-box;
         border: 1px solid transparent;
         border-radius: var(--block-radius);
-        h1 {
+        div {
             line-height: 60px;
             color: var(--text-light-color);
             text-align: left;
             font-weight: 500;
             letter-spacing: 2px;
+            font-size: 2rem;
         }
     }
 }
