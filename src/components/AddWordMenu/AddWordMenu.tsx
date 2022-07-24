@@ -28,7 +28,7 @@ export const AddWordMenu: JSXElementConstructor<any> = memo(() => {
         <Button onClick={miniHandler} >{!mini ? '-' : '+'}</Button>
 
 
-        <Inputtext value={newWord} onChange={wordHandler} />
+        <Inputtext placeholder='Введіть слово' value={newWord} onChange={wordHandler} />
         <Button onClick={addNewWord}>Додати у словник</Button>
 
     </div>);
