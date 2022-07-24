@@ -4,33 +4,26 @@ import { IButton } from "./interfaceButton";
 
 
 
-export const Button: FC<IButton> = memo(({ children, size, onClick, color, fullWidth }: IButton) => {
+export const Button: FC<IButton> = ({ children, size, onClick, color, fullWidth }: IButton) => {
 
-    const classArr = useMemo(() => {
-        const cls = [classes.btn, classes.inher];
+    const classArr = [classes.btn, classes.inher];
 
-        if (size) {
-            cls.push(classes[size]);
-        } else {
-            cls.push(classes.md);
-        }
-
-        if (color) {
-            cls.push(classes[color]);
-        } else {
-            cls.push(classes.default);
-
-        }
-
-        return cls;
+    if (size) {
+        classArr.push(classes[size]);
+    } else {
+        classArr.push(classes.md);
     }
-        , []);
 
+    if (color) {
+        classArr.push(classes[color]);
+    } else {
+        classArr.push(classes.default);
 
+    }
 
     return (
         <button style={{ width: fullWidth ? '100%' : 'auto' }} onClick={onClick} className={classArr.join(' ')}>
             {children}
         </button>
     );
-});
+};

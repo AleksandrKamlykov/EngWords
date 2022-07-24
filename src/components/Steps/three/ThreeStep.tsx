@@ -32,9 +32,8 @@ export const ThreeStep: FC<IThreeStep> = ({ wordLesson, setAnswer, isRightAnswer
         const newState = answerArr.slice(0, answerArr.length - 1);
         setAnswerArr(newState);
     }
-    console.log(isRightAnswer);
 
-    return (<section className={classes.wrapper}>
+    return (<section className={classes.wrapper} style={{ border: isRightAnswer === 'lose' ? '3px solid #a00' : isRightAnswer === 'right' ? '3px solid rgb(5, 195, 132)' : '1px solid #222' }}>
         <div className={classes.title}>{translates[0]}</div>
         <div>{transcription}</div>
         <div className={classes.resultText}>

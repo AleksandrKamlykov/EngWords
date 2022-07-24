@@ -6,7 +6,8 @@ import { Button } from '../../UiKit/Button/Button';
 import { ThreeStep } from '../../components/Steps/three/ThreeStep';
 import { FourStep } from '../../components/Steps/four/Four';
 import { useKeyPress } from '../../hooks/useKeyPress';
-import ring from '../../audio/done2.mp3';
+import ringSuccess from '../../audio/done2.mp3';
+import ringLose from '../../audio/done.mp3';
 import { Helmet } from 'react-helmet';
 
 export enum isRightEnum {
@@ -17,13 +18,14 @@ export enum isRightEnum {
 
 export const Study: FC = () => {
 
-
     const [wordsForStudy, setWordsForStudy] = useState<IWordInStep[]>([]);
 
     const [count, setCount] = useState<number>(0);
     const [answer, setAnswer] = useState<string>('');
     const [isRightAnswer, setIsRightAnswer] = useState<isRightEnum>(isRightEnum.empty);
 
+    const [audioSuccess] = useState(new Audio(ringSuccess));
+    const [audioLose] = useState(new Audio(ringLose));
     const enterPress = useKeyPress('Enter', checkIsRight);
 
     useEffect(() => {
@@ -40,13 +42,11 @@ export const Study: FC = () => {
         setAnswer('');
 
     }
-    const [audio] = useState(new Audio(ring));
 
     function checkIsRight(): void {
         if (wordsForStudy.length === 0) return;
         let isRight: boolean = false;
 
-        audio.play();
 
         if (wordsForStudy[count].step === 1 || wordsForStudy[count].step === 2) {
 
@@ -58,9 +58,12 @@ export const Study: FC = () => {
         }
 
         if (isRight) {
+            audioSuccess.play();
+
             setIsRightAnswer(isRightEnum.right);
         } else {
             setIsRightAnswer(isRightEnum.lose);
+            audioLose.play();
         }
 
         if (isRightAnswer !== isRightEnum.empty) {
@@ -69,8 +72,7 @@ export const Study: FC = () => {
     }
 
     const buttonText = isRightAnswer === 'empty' ? 'Перевірити' : 'Далі';
-    const btnColor = isRightAnswer === 'right' ? 'success' : isRightAnswer === 'lose' ? 'error' : 'default';
-
+    const btnColor = isRightAnswer === isRightEnum.right ? 'success' : isRightAnswer === isRightEnum.lose ? 'error' : 'default';
 
 
     return (

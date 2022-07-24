@@ -21,7 +21,7 @@ export const FourStep: FC<IFour> = ({ wordLesson, setAnswer, answer, isRightAnsw
     }
 
 
-    return (<section className={classes.wrapper}>
+    return (<section className={classes.wrapper} style={{ border: isRightAnswer === 'lose' ? '3px solid #a00' : isRightAnswer === 'right' ? '3px solid rgb(5, 195, 132)' : '1px solid #222' }}>
         <p>{translates[0]}</p>
         <Inputtext disabled={isRightAnswer !== isRightEnum.empty} onChange={handleAnswer} value={answer} placeholder={`${word.length} букв`} />
     </section>);
