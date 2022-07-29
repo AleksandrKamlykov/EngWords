@@ -23,6 +23,7 @@ export const Select: JSXElementConstructor<ISelect> = ({ value, onChange, placeh
     };
 
     const closer = (event: any) => {
+        if (event.target.getAttribute('data-open')) return undefined;
         if (!event.target.classList.contains('list')) setOpenList(false);
     };
 
@@ -38,14 +39,14 @@ export const Select: JSXElementConstructor<ISelect> = ({ value, onChange, placeh
     const filterValue = (data: any[]) => {
         if (!searchInput) return data;
 
-        return data.filter((e: string | number) => e.toString().includes(searchInput));
+        return data.filter((e: string | number) => e.toString().toLowerCase().includes(searchInput.toLowerCase()));
     };
 
     return (<div className={classes.wrapper}>
         <div>
             <Inputtext placeholder={placeholder ?? ''} value={searchInput} onChange={searchHandler} />
             <img onClick={cancelHandler} height={24} src={cancel} />
-            <img onClick={openHandler} height={24} src={arrowBottom} />
+            <img data-open={true} onClick={openHandler} height={24} src={arrowBottom} />
         </div>
         <ul style={{ display: !openList && searchInput.length === 0 ? 'none' : 'block' }} className={classes.list}>
             {

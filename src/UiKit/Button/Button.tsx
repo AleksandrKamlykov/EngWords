@@ -4,7 +4,7 @@ import { IButton } from "./interfaceButton";
 
 
 
-export const Button: FC<IButton> = ({ children, size, onClick, color, fullWidth }: IButton) => {
+export const Button: FC<IButton> = ({ children, size, onClick, color, fullWidth, type }: IButton) => {
 
     const classArr = [classes.btn, classes.inher];
 
@@ -18,6 +18,10 @@ export const Button: FC<IButton> = ({ children, size, onClick, color, fullWidth 
         classArr.push(classes[color]);
     } else {
         classArr.push(classes.default);
+    }
+
+    if (type) {
+        classArr.push(classes[type]);
 
     }
 
