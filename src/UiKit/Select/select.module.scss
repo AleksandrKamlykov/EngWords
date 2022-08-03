@@ -1,13 +1,17 @@
 .wrapper {
     div {
+        //background-color: var(--primary-color);
+        background-color: rgba(12, 92, 235, 1);
         display: flex;
         gap: 5px;
         align-items: center;
-        border: 1px solid #222;
+        border: 1px solid rgba(204, 204, 204, 0);
         border-radius: var(--input-radius);
+        padding: 0;
+        box-sizing: border-box;
         img {
             cursor: pointer;
-            transition: 0.3s;
+            transition: var(--transition);
             &:hover {
                 opacity: 0.5;
                 background-color: #ccc;
@@ -33,11 +37,12 @@
         position: absolute;
 
         li {
+            color: #222;
             text-align: left;
             width: 100%;
             padding: 5px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: var(--transition);
             &:hover {
                 opacity: 0.9;
                 background-color: #ccc;

@@ -9,12 +9,23 @@ h1 {
 }
 .categoryList {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     width: 80%;
     margin: auto;
     gap: 20px;
 }
 .tabPanel {
     margin: 20px;
+}
+
+@media (min-width: 1600px) {
+    .categoryList {
+        display: flex;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        width: 80%;
+        margin: auto;
+        gap: 30px;
+    }
 }

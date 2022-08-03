@@ -4,14 +4,15 @@
 
 header {
     height: 60px;
-    background: rgb(138, 1, 185);
-    background: linear-gradient(45deg, rgba(138, 1, 185, 1) 0%, rgba(181, 48, 224, 1) 50%, rgb(211, 61, 245) 100%);
+    background: var(--gradient-background);
+    background: var(--gradient-primary);
+    // background: rgb(138, 1, 185);
+    // background: linear-gradient(45deg, rgba(138, 1, 185, 1) 0%, rgba(181, 48, 224, 1) 50%, rgb(211, 61, 245) 100%);
     display: flex;
     justify-content: space-between;
     padding: 0 40px;
     align-items: center;
     .logo {
-        color: var(--text-light-color);
         transition: var(--animations-time);
         cursor: pointer;
         text-decoration: none;
@@ -34,7 +35,7 @@ header {
     display: flex;
     height: 100%;
     .nav-item {
-        color: var(--text-light-color);
+        color: var(--text-dark-color);
         font-size: 1.1em;
         transition: var(--animations-time);
         cursor: pointer;

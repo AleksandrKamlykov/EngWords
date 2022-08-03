@@ -10,7 +10,8 @@
     border-radius: 14px;
     padding: 40px;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: rgba(12, 92, 235, 1);
+    color: #eee;
 }
 .group {
     width: 45%;
@@ -37,6 +38,7 @@ label {
     cursor: pointer;
     transition: 0.5s;
     line-height: 28px;
+    color: #222;
 }
 
 label::before {
@@ -51,7 +53,7 @@ label::before {
     width: 24px;
     border-radius: 12px;
     border: 2px solid var(--primary-color);
-    transition: 0.3s;
+    transition: var(--transition);
     z-index: 0;
 }
 
